@@ -25,6 +25,8 @@ $query_tb = mysqli_query($con, $sql_tb);
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,18 +42,20 @@ $query_tb = mysqli_query($con, $sql_tb);
     <div id="main-container">
         <div class="conteiner-add">
             <h1>Ingresar datos</h1>
-            <form action="insert.php" method="POST">
+            <form action="insert.php" method="POST" id="myForm">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="nombres" placeholder="Nombres">
-                <input type="text"  name="apellidos" placeholder="Apellidos">
-                <input type="text"  name="dni" placeholder="DNI">
-                <input type="text"  name="fech_nac" placeholder="Fecha de nacimiento">
-                <input type="text"  name="domicilio" placeholder="Domicilio">
-                <input type="text"  name="genero" placeholder="Género">
-                <input type="text"  name="fech_contrat" placeholder="Fecha de contrato">
-                <input type="text"  name="fech_fin_contrat" placeholder="Fecha fin de contrato">
-                <input type="text"  name="especialidad" placeholder="Especialidad">
-                <input type="submit" value="Registrar">
+
+                <input type="text" name="nombres" placeholder="Nombres" pattern="[A-Za-z ]+" title="Ingrese solo letras y espacios" required>
+                <input type="text" name="apellidos" placeholder="Apellidos" pattern="[A-Za-z ]+" title="Ingrese solo letras y espacios" required>
+                <input type="text" name="dni" placeholder="DNI" pattern="[0-9]{8}" title="Ingrese un DNI válido de 8 dígitos" required>
+                <input type="text" name="fech_nac" placeholder="Fecha de nacimiento" pattern="\d{2}/\d{2}/\d{4}" title="Ingrese una fecha válida en formato dd/mm/yyyy" required>
+                <input type="text" name="domicilio" placeholder="Domicilio" required>
+                <input type="text" name="genero" placeholder="Género" pattern="[MF]" title="Ingrese 'M' para masculino o 'F' para femenino" required>
+                <input type="text" name="fech_contrat" placeholder="Fecha de contrato" pattern="\d{2}/\d{2}/\d{4}" title="Ingrese una fecha válida en formato dd/mm/yyyy" required>
+                <input type="text" name="fech_fin_contrat" placeholder="Fecha fin de contrato" pattern="\d{2}/\d{2}/\d{4}" title="Ingrese una fecha válida en formato dd/mm/yyyy" required>
+                <input type="text" name="especialidad" placeholder="Especialidad" required>
+
+                <input type="submit" value="Registrar" class="btn btn-primary">
             </form>
         </div>
         <div class="conteiner-btn">
@@ -60,16 +64,51 @@ $query_tb = mysqli_query($con, $sql_tb);
     </div>
     
     <script>
-        const btn = document.querySelector('#menu-btn');
-        const menu = document.querySelector('#sidemenu');
-        btn.addEventListener('click', e => {
-            menu.classList.toggle("menu-expanded");
-            menu.classList.toggle("menu-collapsed");
 
-            document.querySelector('body').classList.toggle('body-expanded');
+        document.querySelector('#myForm').addEventListener('submit', function(event) {
+
+            var nombres = document.querySelector('input[name="nombres"]').value;
+            var apellidos = document.querySelector('input[name="apellidos"]').value;
+            var dni = document.querySelector('input[name="dni"]').value;
+            var fech_nac = document.querySelector('input[name="fech_nac"]').value;
+            var domicilio = document.querySelector('input[name="domicilio"]').value;
+            var genero = document.querySelector('input[name="genero"]').value;
+            var fech_contrat = document.querySelector('input[name="fech_contrat"]').value;
+            var fech_fin_contrat = document.querySelector('input[name="fech_fin_contrat"]').value;
+            var especialidad = document.querySelector('input[name="especialidad"]').value;
+            
+            //REGEX
+            var regexSoloLetras = /^[A-Za-z\s]+$/;
+            var regexDNI = /^\d{8}$/;
+            var regexFecha = /^\d{2}\/\d{2}\/\d{4}$/;
+
+            //VALIDACION
+            if (!regexSoloLetras.test(nombres)) {
+                alert("Ingrese solo letras y espacios en el campo Nombres");
+                event.preventDefault();
+                return;
+            }
+
+            if (!regexSoloLetras.test(apellidos)) {
+                alert("Ingrese solo letras y espacios en el campo Apellidos");
+                event.preventDefault();
+                return;
+            }
+
+            if (!regexDNI.test(dni)) {
+                alert("Ingrese un DNI válido de 8 dígitos en el campo DNI");
+                event.preventDefault();
+                return;
+            }
+
+            if (!regexFecha.test(fech_nac)) {
+                alert("Ingrese una fecha válida en formato dd/mm/yyyy en el campo Fecha de nacimiento");
+                event.preventDefault();
+                return;
+            }
+
         });
     </script>
     <div class="capa"></div>
 </body>
-
 </html>
