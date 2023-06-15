@@ -31,6 +31,7 @@ $query_tb = mysqli_query($con, $sql_tb);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
         $url = "../extensiones/head.php";
@@ -42,19 +43,19 @@ $query_tb = mysqli_query($con, $sql_tb);
             <h1>Ingresar datos</h1>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="Nombre" placeholder="Nombre">
-                <input type="text"  name="Apellidos" placeholder="Apellidos">
-                <input type="text"  name="Apoderado" placeholder="Apoderado">
-                <input type="number"  name="Telefono" placeholder="Teléfono">
-                <input type="date"  name="Fechanac" placeholder="Fecha de nacimiento">
+                <input type="text" name="Nombre" placeholder="Nombre" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Nombre" required>
+                <input type="text" name="Apellidos" placeholder="Apellidos" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Apellidos" required>
+                <input type="text" name="Apoderado" placeholder="Apoderado" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Apoderado" required>
+                <input type="tel" name="Telefono" placeholder="Teléfono" pattern="\d{9}" title="Ingrese un número de teléfono válido de 9 dígitos" required>
+                <input type="date" name="Fechanac" placeholder="Fecha de nacimiento" required>
                 <input type="submit" value="Registrar">
             </form>
         </div>
         <div class="conteiner-btn">
-            
+
         </div>
     </div>
-    
+
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');

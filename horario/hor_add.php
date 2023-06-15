@@ -31,6 +31,7 @@ $query_tb = mysqli_query($con, $sql_tb);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
         $url = "../extensiones/head.php";
@@ -42,17 +43,19 @@ $query_tb = mysqli_query($con, $sql_tb);
             <h1>Ingresar datos</h1>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="Bloque" placeholder="Bloque">
-                <input type="time" name="inicio" placeholder="inicio">
-                <input type="time" name="fin" placeholder="fin">
+
+                <input type="text" name="Bloque" placeholder="Bloque" pattern="Bloque [1-9]" title="Ingrese 'Bloque' seguido de un número de un dígito" required>
+                <input type="time" name="inicio" placeholder="inicio" required>
+                <input type="time" name="fin" placeholder="fin" required>
+                
                 <input type="submit" value="Registrar">
             </form>
         </div>
         <div class="conteiner-btn">
-            
+
         </div>
     </div>
-    
+
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');

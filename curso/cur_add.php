@@ -31,6 +31,7 @@ $query_tb = mysqli_query($con, $sql_tb);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
         $url = "../extensiones/head.php";
@@ -42,7 +43,7 @@ $query_tb = mysqli_query($con, $sql_tb);
             <h1>Ingresar datos</h1>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="Nombre" placeholder="Nombre">
+                <input type="text" name="Nombre" placeholder="Nombre" pattern="[A-Za-z]+(\s[A-Za-z]+)*" title="Ingrese un nombre válido" required>
                 <input type="submit" value="Registrar">
             </form>
         </div>

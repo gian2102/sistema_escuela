@@ -31,10 +31,11 @@ $query_tb = mysqli_query($con, $sql_tb);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
-        $url = "../extensiones/head.php";
-        include_once ($url);
+    $url = "../extensiones/head.php";
+    include_once($url);
     ?>
     <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1>
     <div id="main-container">
@@ -42,17 +43,19 @@ $query_tb = mysqli_query($con, $sql_tb);
             <h1>Ingresar datos</h1>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="sal_grado" placeholder="Grado">
-                <input type="text"  name="sal_seccion" placeholder="Seccion">
-                <input type="text"  name="est_id" placeholder="ID ESTUDIANTE">
+
+                <input type="text" name="sal_grado" placeholder="Grado" pattern="[1-9]{1}[0-9]{0,1}" required>
+                <input type="text" name="sal_seccion" placeholder="Seccion" pattern="[A-Za-z0-9]{1,}" required>
+                <input type="text" name="est_id" placeholder="ID ESTUDIANTE" pattern="[1-9]{1}[0-9]{0,}" required>
+                
                 <input type="submit" value="Registrar">
             </form>
         </div>
         <div class="conteiner-btn">
-            
+
         </div>
     </div>
-    
+
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');

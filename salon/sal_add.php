@@ -31,6 +31,7 @@ $query_tb = mysqli_query($con, $sql_tb);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
         $url = "../extensiones/head.php";
@@ -42,12 +43,14 @@ $query_tb = mysqli_query($con, $sql_tb);
             <h1>Ingresar datos</h1>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
-                <input type="text" name="grado" placeholder="grado">
-                <input type="text"  name="seccion" placeholder="seccion">
-                <input type="text"  name="capacidad" placeholder="capacidad">
-                <input type="text"  name="docente" placeholder="docente">
-                <input type="text"  name="horario" placeholder="horario">
-                <input type="text"  name="curso" placeholder="Curso">
+
+                <input type="text" name="grado" placeholder="grado" pattern="[0-9]+" title="Ingrese un grado válido" required>
+                <input type="text" name="seccion" placeholder="seccion" pattern="[A-Za-z\s]+" title="Ingrese una sección válida" required>
+                <input type="text" name="capacidad" placeholder="capacidad" pattern="[0-9]+" title="Ingrese una capacidad válida" required>
+                <input type="text" name="docente" placeholder="docente" pattern="[A-Za-z\s]+" title="Ingrese un nombre de docente válido" required>
+                <input type="text" name="horario" placeholder="horario" pattern="[A-Za-z\s]+" title="Ingrese un horario válido" required>
+                <input type="text" name="curso" placeholder="Curso" pattern="[A-Za-z\s]+" title="Ingrese un nombre de curso válido" required>
+                
                 <input type="submit" value="Registrar">
             </form>
         </div>

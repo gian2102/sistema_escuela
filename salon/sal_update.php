@@ -34,6 +34,7 @@ $row_edit = mysqli_fetch_array($query_edit);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escuela</title>
 </head>
+
 <body>
     <?php
         $url = "../extensiones/head.php";
@@ -47,17 +48,17 @@ $row_edit = mysqli_fetch_array($query_edit);
             <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
             <input type="hidden" name="sal_id" value="<?php echo $row_edit['sal_id'] ?>">
             <input type="text" class="form-control mb-3" name="grado" placeholder="Grado"
-                value="<?php echo $row_edit['sal_grado'] ?>">
+                value="<?php echo $row_edit['sal_grado'] ?>" pattern="[A-Za-z0-9\s]+" title="Ingrese un grado válido" required>
             <input type="text" class="form-control mb-3" name="seccion" placeholder="seccion"
-                value="<?php echo $row_edit['sal_seccion'] ?>">
+                value="<?php echo $row_edit['sal_seccion'] ?>" pattern="[A-Za-z\s]+" title="Ingrese una sección válida" required>
             <input type="text" class="form-control mb-3" name="capacidad" placeholder="capacidad"
-                value="<?php echo $row_edit['sal_capacidad'] ?>">
+                value="<?php echo $row_edit['sal_capacidad'] ?>" pattern="[0-9]+" title="Ingrese una capacidad válida" required>
             <input type="text" class="form-control mb-3" name="doc_id" placeholder="ID DOCENTE"
-                value="<?php echo $row_edit['doc_id'] ?>">
+                value="<?php echo $row_edit['doc_id'] ?>" pattern="[A-Za-z0-9\s]+" title="Ingrese un ID de docente válido" required>
             <input type="text" class="form-control mb-3" name="hor_id" placeholder="ID HORARIO"
-                value="<?php echo $row_edit['hor_id'] ?>">
+                value="<?php echo $row_edit['hor_id'] ?>" pattern="[A-Za-z0-9\s]+" title="Ingrese un ID de horario válido" required>
             <input type="text" class="form-control mb-3" name="cur_id" placeholder="ID CURSO"
-                value="<?php echo $row_edit['cur_id'] ?>">
+                value="<?php echo $row_edit['cur_id'] ?>" pattern="[A-Za-z0-9\s]+" title="Ingrese un ID de curso válido" required>
 
             <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
         </form>
