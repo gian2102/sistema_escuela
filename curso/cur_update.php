@@ -66,7 +66,7 @@ $row_edit = mysqli_fetch_array($query_edit);
             document.querySelector('body').classList.toggle('body-expanded');
         });
     </script>
-    <div class="capa"></div>
+    
 </body>
 
 </html>

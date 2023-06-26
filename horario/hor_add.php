@@ -38,23 +38,22 @@ $query_tb = mysqli_query($con, $sql_tb);
         include_once ($url);
     ?>
     <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1>
-    <div id="main-container">
-        <div class="conteiner-add">
-            <h1>Ingresar datos</h1>
+    
+    <div id="feedback-form">
+        <h2 class="header">Ingresar datos</h2>
+        <div>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
 
                 <input type="text" name="Bloque" placeholder="Bloque" pattern="Bloque [1-9]" title="Ingrese 'Bloque' seguido de un número de un dígito" required>
                 <input type="time" name="inicio" placeholder="inicio" required>
                 <input type="time" name="fin" placeholder="fin" required>
-                
-                <input type="submit" value="Registrar">
+
+                <button type="submit" value="Registrar">Registrar</button>
             </form>
         </div>
-        <div class="conteiner-btn">
-
-        </div>
     </div>
+
 
     <script>
         const btn = document.querySelector('#menu-btn');

@@ -10,34 +10,30 @@
     color: wheat;
     font-size: 80px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-size: 100vw 100vh;
 	background-repeat: no-repeat;
     font-family: 'Montserrat Alternates', sans-serif;
-    background-color: #ffffffd5;
     font-size: 18px;
-    margin: 0;
-    padding: 0;
     margin-left: var(--width-collapsed);
+    background: #D6dbde;
 }
+
 .body-expanded{
     margin-left: var(--width);
 }
-.capa{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #D6dbde;
-    z-index: -1;
-    top: 0;left: 0;
-}
+
 #main-container{
-    width: 100%;
+    justify-content: center;
     height: 100%;
     display: flex;
-    color:  white;
     text-align: center;
-    font-size: 30px;
 }
 #sidemenu{
     background-color: var(--bgcolor);
@@ -45,7 +41,6 @@ body{
     position: fixed;
     height: 100%;
     left: 0;
-    top: 0;
 }
 #sidemenu a{
     color: white;
@@ -184,7 +179,6 @@ body{
 }
 
 .title-modules{
-    top: 0;
     background-color: #1e283fe0;
     font-size: 40px;
     text-align: center;
@@ -192,14 +186,7 @@ body{
     height: 100%;
     color: rgb(255, 255, 255);
 }
-.col-md-8{
-    float: left;
-    margin-top: 15px;
-    overflow-y: scroll;
-    width: 80%;
-    height: 550px;  
-    
-}
+
 table {
     margin: auto;
     width: 95%;
@@ -263,17 +250,109 @@ table {
 .btn_agregar{
     margin-top: 20%;
     cursor: pointer;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: red;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100px;
+    font-size: 50px;
 }
 .btn_agregar:hover{
     background-color: blue;
     width: 95px;
     height: 95px;
 }
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; 
+    max-width: 600px; 
+  }
+  
+  .box input {
+    width: 100%; 
+  }
+
+/*Tabla ajustada al ancho de la pagina en caso sea mas grande, aqui personalizar el tamaño de la fuente en caso sea necesario*/
+  .custom-table {
+    width: 100%;
+    max-width: 100%; 
+    font-size: 21px; 
+    margin: 12px 0 0 12px;
+}
+
+
+/*BOTONES/INPUTS*/
+#feedback-form {
+    width: 280px;
+    margin: 80px auto 0;
+    background-color: #fcfcfc;
+    padding: 20px 50px 40px;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    font-family: sans-serif;
+  }
+  
+  #feedback-form * {
+      box-sizing: border-box;
+  }
+  
+  #feedback-form h2{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #feedback-form input {
+    margin-bottom: 15px;
+  }
+  
+  #feedback-form input[type=text] {
+    display: block;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+  }
+  
+  #feedback-form label {
+    color: #777;
+    font-size: 0.8em;
+  }
+  
+  #feedback-form input:not(:checked) + #feedback-phone {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  #feedback-form #feedback-phone {
+    transition: .3s;
+  }
+  
+  #feedback-form button[type=submit] {
+    display: block;
+    margin: 20px auto 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    
+    background: #207cca; /* Old browsers */
+    background: -moz-linear-gradient(left, #207cca 0%, #9f58a3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #207cca 0%,#9f58a3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #207cca 0%,#9f58a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#9f58a3',GradientType=1 ); /* IE6-9 */
+  }

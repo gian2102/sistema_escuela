@@ -48,10 +48,16 @@ $row_edit = mysqli_fetch_array($query_edit);
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
                 <input type="hidden" name="hor_id" value="<?php echo $row_edit['hor_id'] ?>">
 
-                <input type="text" class="form-control mb-3" name="nombre" placeholder="Bloque" pattern="Bloque [1-9]" value="<?php echo $row_edit['hor_tipo'] ?>" required>
-                <input type="time" class="form-control mb-3" name="inicio" placeholder="Hora de inicio" required value="<?php echo $row_edit['hor_inicio'] ?>">
-                <input type ="time" class="form-control mb-3" name="fin" placeholder="Hora de fin" required value="<?php echo $row_edit['hor_fin'] ?>">
                 
+                
+                <div class="container">
+                    <div class="box">
+                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Bloque" pattern="Bloque [1-9]" value="<?php echo $row_edit['hor_tipo'] ?>" required>
+                <input type="time" class="form-control mb-3" name="inicio" placeholder="Hora de inicio" required value="<?php echo $row_edit['hor_inicio'] ?>">
+                <input type ="time" class="form-control mb-3" name="fin" placeholder="Hora de fin" required value="<?php echo $row_edit['hor_fin'] ?>">   
+                    </div>       
+                </div> 
+
                 <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
             </form>
         </div>

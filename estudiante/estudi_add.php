@@ -38,22 +38,25 @@ $query_tb = mysqli_query($con, $sql_tb);
         include_once ($url);
     ?>
     <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1>
-    <div id="main-container">
-        <div class="conteiner-add">
-            <h1>Ingresar datos</h1>
+        
+    <div id="feedback-form">
+        <h2 class="header">Ingresar datos</h2>
+        <div>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
+
                 <input type="text" name="Nombre" placeholder="Nombre" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Nombre" required>
                 <input type="text" name="Apellidos" placeholder="Apellidos" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Apellidos" required>
                 <input type="text" name="Apoderado" placeholder="Apoderado" pattern="[A-Za-z\s]+" title="Ingrese solo letras en el campo Apoderado" required>
-                <input type="tel" name="Telefono" placeholder="Teléfono" pattern="\d{9}" title="Ingrese un número de teléfono válido de 9 dígitos" required>
+                <input type="text" name="Telefono" placeholder="Teléfono" pattern="\d{9}" title="Ingrese un número de teléfono válido de 9 dígitos" required>
                 <input type="date" name="Fechanac" placeholder="Fecha de nacimiento" required>
-                <input type="submit" value="Registrar">
+
+                <button type="submit" value="Registrar">Registrar</button>
             </form>
         </div>
-        <div class="conteiner-btn">
+    </div>
 
-        </div>
+
     </div>
 
     <script>

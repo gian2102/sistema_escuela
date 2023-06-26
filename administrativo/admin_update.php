@@ -47,16 +47,22 @@ $row_edit = mysqli_fetch_array($query_edit);
             <form action="update.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
             <input type="hidden" name="id_us" value="<?php echo $row_edit['us_id'] ?>">
-            <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre"
-                value="<?php echo $row_edit['us_nombre'] ?>">
-            <input type="text" class="form-control mb-3" name="telefono" placeholder="telefono"
-                value="<?php echo $row_edit['us_telf'] ?>">
-            <input type="text" class="form-control mb-3" name="privilegio" placeholder="Direccion"
-                value="<?php echo $row_edit['us_privilegio'] ?>">
-            <input type="text" class="form-control mb-3" name="usuario" placeholder="Telefono"
-                value="<?php echo $row_edit['us_usuario'] ?>">
-            <input type="text" class="form-control mb-3" name="contra" placeholder="Telefono"
-                value="<?php echo $row_edit['us_contra'] ?>">
+
+            
+            <div class="container">
+                <div class="box">
+                    <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre" 
+                        value="<?php echo $row_edit['us_nombre'] ?>">
+                    <input type="text" class="form-control mb-3" name="telefono" placeholder="telefono"
+                        value="<?php echo $row_edit['us_telf'] ?>">
+                    <input type="text" class="form-control mb-3" name="privilegio" placeholder="Direccion"
+                        value="<?php echo $row_edit['us_privilegio'] ?>">
+                    <input type="text" class="form-control mb-3" name="usuario" placeholder="Telefono"
+                        value="<?php echo $row_edit['us_usuario'] ?>">
+                    <input type="text" class="form-control mb-3" name="contra" placeholder="Telefono"
+                        value="<?php echo $row_edit['us_contra'] ?>">    
+                </div>       
+            </div> 
 
             <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
         </form>
@@ -76,7 +82,7 @@ $row_edit = mysqli_fetch_array($query_edit);
             document.querySelector('body').classList.toggle('body-expanded');
         });
     </script>
-    <div class="capa"></div>
+
 </body>
 
 </html>

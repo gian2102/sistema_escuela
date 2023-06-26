@@ -39,9 +39,9 @@ $query_tb = mysqli_query($con, $sql_tb);
         include_once ($url);
     ?>
     <h1 class="title-modules">MATRICULA</h1>
-    <div id="main-container">
-        <div class="col-md-8">
-            <table>
+    <div id="main-container" class="table-responsive">
+        <div>
+            <table class="custom-table">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
@@ -103,7 +103,7 @@ $query_tb = mysqli_query($con, $sql_tb);
             document.querySelector('body').classList.toggle('body-expanded');
         });
     </script>
-         <div class="capa"></div>
+
 </body>
 
 </html>

@@ -101,7 +101,7 @@ $row_edit = mysqli_fetch_array($query_edit);
             return true;
         }
     </script>
-    <div class="capa"></div>
+
 </body>
 
 </html>

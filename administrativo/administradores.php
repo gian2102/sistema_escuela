@@ -38,9 +38,9 @@ $query_tb = mysqli_query($con, $sql_tb);
         include_once ($url);
     ?>
     <h1 class="title-modules">ADMINISTRADORES</h1>
-    <div id="main-container">
-        <div class="col-md-8">
-            <table>
+    <div id="main-container" class="table-responsive">
+        <div>
+            <table class="custom-table">
                 <thead>
                     <tr>
                         <th>USUARIO</th>
@@ -69,10 +69,11 @@ $query_tb = mysqli_query($con, $sql_tb);
                             <th>
                                 <?php echo $row_tb['us_privilegio'] ?>
                             </th>
-                            <th><div class="btn-editar" onclick="window.location.href='./admin_update.php?us_id=<?php echo $row['us_id'] ?>&id_edit=<?php echo $row_tb['us_id'] ?>'">
-                            </div>
+                            <th>
+                                <div class="btn-editar" onclick="window.location.href='./admin_update.php?us_id=<?php echo $row['us_id'] ?>&id_edit=<?php echo $row_tb['us_id'] ?>'"></div>
                             </th>
-                            <th><div class="btn-eliminar" onclick="window.location.href='./admin_delete.php?us_id=<?php echo $row['us_id'] ?>&id_delete=<?php echo $row_tb['us_id'] ?>'"></div>
+                            <th>
+                                <div class="btn-eliminar" onclick="window.location.href='./admin_delete.php?us_id=<?php echo $row['us_id'] ?>&id_delete=<?php echo $row_tb['us_id'] ?>'"></div>
                             </th>
                         </tr>
                         <?php
@@ -102,7 +103,7 @@ $query_tb = mysqli_query($con, $sql_tb);
             document.querySelector('body').classList.toggle('body-expanded');
         });
     </script>
-         <div class="capa"></div>
+
 </body>
 
 </html>

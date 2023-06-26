@@ -38,21 +38,19 @@ $query_tb = mysqli_query($con, $sql_tb);
     include_once($url);
     ?>
     <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1>
-    <div id="main-container">
-        <div class="conteiner-add">
-            <h1>Ingresar datos</h1>
+                
+    <div id="feedback-form">
+        <h2 class="header">Ingresar datos</h2>
+        <div>
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
 
                 <input type="text" name="sal_grado" placeholder="Grado" pattern="[1-9]{1}[0-9]{0,1}" required>
                 <input type="text" name="sal_seccion" placeholder="Seccion" pattern="[A-Za-z0-9]{1,}" required>
                 <input type="text" name="est_id" placeholder="ID ESTUDIANTE" pattern="[1-9]{1}[0-9]{0,}" required>
-                
-                <input type="submit" value="Registrar">
-            </form>
-        </div>
-        <div class="conteiner-btn">
 
+                <button type="submit" value="Registrar">Registrar</button>
+            </form>
         </div>
     </div>
 

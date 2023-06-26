@@ -48,25 +48,31 @@ $row_edit = mysqli_fetch_array($query_edit);
             <form action="update.php" method="POST" id="myForm">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
                 <input type="hidden" name="do_id" value="<?php echo $row_edit['do_id'] ?>">
-                <input type="text" class="form-control mb-3" name="nombres" 
-                    value="<?php echo $row_edit['do_nombre'] ?>" pattern="[A-Za-z ]+" placeholder="Edite solo letras y espacios" required>
-                <input type="text" class="form-control mb-3" name="apellidos" 
-                    value="<?php echo $row_edit['do_apellido'] ?>" pattern="[A-Za-z ]+" placeholder="Edite solo letras y espacios" required>
-                <input type="text" class="form-control mb-3" name="dni" 
-                    value="<?php echo $row_edit['do_dni'] ?>" pattern="[0-9]{8}" placeholder="Edite un DNI válido de 8 dígitos" required>
-                <input type="text" class="form-control mb-3" name="fech_nac" 
-                    value="<?php echo $row_edit['do_fecha_nac'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
-                <input type="text" class="form-control mb-3" name="domicilio" 
-                    value="<?php echo $row_edit['do_domicilio'] ?>" placeholder="Edite su dirección" required>
-                <input type="text" class="form-control mb-3" name="genero" 
-                    value="<?php echo $row_edit['do_genero'] ?>" pattern="[MF]" placeholder="Edite 'M' para masculino o 'F' para femenino" required>
-                <input type="text" class="form-control mb-3" name="fech_contrat" 
-                    value="<?php echo $row_edit['do_fecha_contrat'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
-                <input type="text" class="form-control mb-3" name="fech_fin_contrat" 
-                    value="<?php echo $row_edit['do_fech_fin_contrat'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
-                <input type="text" class="form-control mb-3" name="especialidad" 
-                    value="<?php echo $row_edit['do_especialidad'] ?>" placeholder="Edite especialidad" required>
-             
+
+
+
+                <div class="container">
+                    <div class="box">
+                        <input type="text" class="form-control mb-3" name="nombres" 
+                            value="<?php echo $row_edit['do_nombre'] ?>" pattern="[A-Za-z ]+" placeholder="Edite solo letras y espacios" required>
+                        <input type="text" class="form-control mb-3" name="apellidos" 
+                            value="<?php echo $row_edit['do_apellido'] ?>" pattern="[A-Za-z ]+" placeholder="Edite solo letras y espacios" required>
+                        <input type="text" class="form-control mb-3" name="dni" 
+                            value="<?php echo $row_edit['do_dni'] ?>" pattern="[0-9]{8}" placeholder="Edite un DNI válido de 8 dígitos" required>
+                        <input type="text" class="form-control mb-3" name="fech_nac" 
+                            value="<?php echo $row_edit['do_fecha_nac'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
+                        <input type="text" class="form-control mb-3" name="domicilio" 
+                            value="<?php echo $row_edit['do_domicilio'] ?>" placeholder="Edite su dirección" required>
+                        <input type="text" class="form-control mb-3" name="genero" 
+                            value="<?php echo $row_edit['do_genero'] ?>" pattern="[MF]" placeholder="Edite 'M' para masculino o 'F' para femenino" required>
+                        <input type="text" class="form-control mb-3" name="fech_contrat" 
+                            value="<?php echo $row_edit['do_fecha_contrat'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
+                        <input type="text" class="form-control mb-3" name="fech_fin_contrat" 
+                            value="<?php echo $row_edit['do_fech_fin_contrat'] ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="Edite con fecha válida en formato dd/mm/yyyy" required>
+                        <input type="text" class="form-control mb-3" name="especialidad" 
+                            value="<?php echo $row_edit['do_especialidad'] ?>" placeholder="Edite especialidad" required>
+                    </div>       
+                </div> 
 
                 <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
             </form>
@@ -130,7 +136,7 @@ $row_edit = mysqli_fetch_array($query_edit);
 
         });
     </script>
-    <div class="capa"></div>
+
 </body>
 
 </html>

@@ -14,14 +14,14 @@
         $url = "./head.php";
         include_once ($url);
     ?>
-   <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1><br>
+   <h1 class="title-modules">BIENVENIDO AL PANEL DE CONTROL</h1>
     <div id="main-container">
         <h1 class="title-modules">
             <?php echo $row['us_nombre'] ?>
         </h1>
     </div>
-    <h1 class="title-modules">ADMINISTRADORES</h1><br>
-    <div class="capa"></div>
+    <h1 class="title-modules">ADMINISTRADORES</h1>
+
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');
