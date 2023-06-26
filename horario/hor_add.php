@@ -10,6 +10,7 @@ function conectar_hor_add(){
     mysqli_select_db($con,$db);
     return $con;
 }
+
 $con = conectar_hor_add();
 
 $us_id = $_GET['us_id'];
@@ -22,6 +23,7 @@ $row = mysqli_fetch_array($query);
 $sql_tb = "select * from tb_horario";
 $query_tb = mysqli_query($con, $sql_tb);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

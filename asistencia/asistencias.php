@@ -1,19 +1,26 @@
 <?php
-include("conexion.php");
-$con = conectar();
+function conectar_asis(){
+    $host="localhost";
+    $user="root";
+    $pass="";
 
-if (isset($_POST['buscar'])) {
-    $alumno_id = $_POST['alumno_id'];
+    $db="db_sistema";
+    $con=mysqli_connect($host,$user,$pass);
 
-    // Consulta para obtener la información del alumno
-    $sql_alumno = "SELECT * FROM tb_estudiante WHERE est_id='$alumno_id'";
-    $query_alumno = mysqli_query($con, $sql_alumno);
-    $row_alumno = mysqli_fetch_array($query_alumno);
-
-    // Consulta para obtener las asistencias y faltas del alumno
-    $sql_asistencias = "SELECT * FROM tb_asistencia WHERE alumno_id='$alumno_id'";
-    $query_asistencias = mysqli_query($con, $sql_asistencias);
+    mysqli_select_db($con,$db);
+    return $con;
 }
+$con = conectar_asis();
+
+$us_id = $_GET['us_id'];
+
+$sql = "SELECT * FROM tb_usuario WHERE us_id='$us_id'";
+$query = mysqli_query($con, $sql);
+
+$row = mysqli_fetch_array($query);
+
+$sql_tb = "select * from tb_curso";
+$query_tb = mysqli_query($con, $sql_tb);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +34,6 @@ if (isset($_POST['buscar'])) {
 <body>
     <h1>Registro de Asistencias</h1>
 
-    <!-- Formulario de búsqueda -->
     <form action="" method="POST">
         <label for="alumno_id">ID del Alumno:</label>
         <input type="text" name="alumno_id" id="alumno_id" required>
@@ -41,9 +47,7 @@ if (isset($_POST['buscar'])) {
         <p>Apellidos: <?php echo $row_alumno['est_apellidos']; ?></p>
         <p>Apoderado: <?php echo $row_alumno['est_apoderado']; ?></p>
         <p>Teléfono Apoderado: <?php echo $row_alumno['est_apoderadocel']; ?></p>
-        <p>Fecha de Nacimiento: <?php echo $row_alumno['est_fechanac']; ?></p>
 
-        <!-- Tabla de asistencias -->
         <h2>Asistencias y Faltas Registradas:</h2>
         <table>
             <thead>
@@ -54,7 +58,8 @@ if (isset($_POST['buscar'])) {
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row_asistencia = mysqli_fetch_array($query_asistencias)) : ?>
+                <?php 
+                while ($row_asistencia = mysqli_fetch_array($query_asistencias)) : ?>
                     <tr>
                         <td><?php echo $row_asistencia['fecha']; ?></td>
                         <td><?php echo $row_asistencia['asistencia']; ?></td>
@@ -64,5 +69,16 @@ if (isset($_POST['buscar'])) {
             </tbody>
         </table>
     <?php endif; ?>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e => {
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
 </body>
 </html>

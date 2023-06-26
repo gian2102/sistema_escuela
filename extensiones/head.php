@@ -81,7 +81,7 @@ $row = mysqli_fetch_array($query);
                 </a>
             </div>
             <div class="item">
-                <a href="../matricula/asistencias.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../asistencia/asistencias.php?us_id=<?php echo $row['us_id'] ?>">
                     <div class="icon"><img src="../img/matricula.png" alt=""></div>
                     <div class="title"><span>Matrícula</span></div>
                 </a>

@@ -22,6 +22,7 @@ $row = mysqli_fetch_array($query);
 $sql_tb = "select * from tb_horario";
 $query_tb = mysqli_query($con, $sql_tb);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
