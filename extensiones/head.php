@@ -51,12 +51,6 @@ $row = mysqli_fetch_array($query);
                 </a>
             </div>
             <div class="item">
-                <a href="../estudiante/estudiantes.php?us_id=<?php echo $row['us_id'] ?>">
-                    <div class="icon"><img src="../img/estudiantes.png" alt=""></div>
-                    <div class="title"><span>Estudiantes</span></div>
-                </a>
-            </div>
-            <div class="item">
                 <a href="../horario/horarios.php?us_id=<?php echo $row['us_id'] ?>">
                     <div class="icon"><img src="../img/horario.png" alt=""></div>
                     <div class="title"><span>Horarios</span></div>
@@ -72,6 +66,12 @@ $row = mysqli_fetch_array($query);
                 <a href="../salon/salones.php?us_id=<?php echo $row['us_id'] ?>">
                     <div class="icon"><img src="../img/salon.png" alt=""></div>
                     <div class="title"><span>Salones</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="../estudiante/estudiantes.php?us_id=<?php echo $row['us_id'] ?>">
+                    <div class="icon"><img src="../img/estudiantes.png" alt=""></div>
+                    <div class="title"><span>Estudiantes</span></div>
                 </a>
             </div>
             <div class="item">

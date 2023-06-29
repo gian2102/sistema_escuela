@@ -58,6 +58,7 @@ $query_tb = mysqli_query($con, $sql_tb);
     </div> 
     
     <script>
+        
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');
         btn.addEventListener('click', e => {

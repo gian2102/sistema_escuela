@@ -50,13 +50,13 @@ $row_delete = mysqli_fetch_array($query_tb);
                 <input type="hidden" name="alumno_id" value="<?php echo $row_delete['alumno_id'] ?>">
 
                 <input readonly type="text" class="form-control mb-3" name="nombres" 
-                    value="<?php echo $row_delete['do_nombre'] ?>">
+                    value="<?php echo $row_delete['alumno_id'] ?>">
                 <input readonly type="text" class="form-control mb-3" name="apellidos" 
-                    value="<?php echo $row_delete['do_apellido'] ?>">
+                    value="<?php echo $row_delete['fecha'] ?>">
                 <input readonly type="text" class="form-control mb-3" name="dni" 
-                    value="<?php echo $row_delete['do_dni'] ?>">
+                    value="<?php echo $row_delete['asistencia'] ?>">
                 <input readonly type="text" class="form-control mb-3" name="fech_nac" 
-                    value="<?php echo $row_delete['do_fecha_nac'] ?>">
+                    value="<?php echo $row_delete['observacion'] ?>">
 
                 <input  type="submit" value="Eliminar">
             </form>
@@ -67,14 +67,14 @@ $row_delete = mysqli_fetch_array($query_tb);
     </div>
     
     <script>
-        // const btn = document.querySelector('#menu-btn');
-        // const menu = document.querySelector('#sidemenu');
-        // btn.addEventListener('click', e => {
-        //     menu.classList.toggle("menu-expanded");
-        //     menu.classList.toggle("menu-collapsed");
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e => {
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
 
-        //     document.querySelector('body').classList.toggle('body-expanded');
-        // });
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
     </script>
 
 </body>

@@ -46,6 +46,7 @@ $query_tb = mysqli_query($con, $sql_tb);
 
                 <input type="text" name="Nombre" placeholder="Nombre"  pattern="[A-Za-z]+(\s[A-Za-z]+)*" title="Ingrese un nombre válido" required></input>
                 <input type="text" id="feedback-phone" name="phone" placeholder="Phone number"></input>
+                
                 <button type="submit" value="Registrar">Registrar</button>
             </form>
         </div>

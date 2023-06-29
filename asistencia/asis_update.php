@@ -76,14 +76,14 @@ $row_edit = mysqli_fetch_array($query_edit);
     </div>
     
     <script>
-        // const btn = document.querySelector('#menu-btn');
-        // const menu = document.querySelector('#sidemenu');
-        // btn.addEventListener('click', e => {
-        //     menu.classList.toggle("menu-expanded");
-        //     menu.classList.toggle("menu-collapsed");
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e => {
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
 
-        //     document.querySelector('body').classList.toggle('body-expanded');
-        // });
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
 
         document.getElementById("myForm").addEventListener("submit", function(event) {
   
