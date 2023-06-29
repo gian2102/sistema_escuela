@@ -83,15 +83,10 @@ $row = mysqli_fetch_array($query);
             <div class="item">
                 <a href="../asistencia/asistencias.php?us_id=<?php echo $row['us_id'] ?>">
                     <div class="icon"><img src="../img/matricula.png" alt=""></div>
-                    <div class="title"><span>Matrícula</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="../asistencia/asis_add.php?us_id=<?php echo $row['us_id'] ?>">
-                    <div class="icon"><img src="../img/matricula.png" alt=""></div>
                     <div class="title"><span>Asistencia</span></div>
                 </a>
             </div>
+
         </div>
     </div>
    

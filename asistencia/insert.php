@@ -4,12 +4,12 @@
 
     $id = $_POST['id'];
 
-    $alumno_id = $_POST['alumno_id'];
-    $fecha = $_POST['fecha'];
-    $asistencia = $_POST['asistencia'];
-    $observacion = $_POST['observacion'];
+    $alumno_id = $_POST['Alumno_id']; 
+    $fecha = $_POST['Fecha'];
+    $asistencia = $_POST['Asistencia'];
+    $observacion = $_POST['Observacion'];
 
-    $sql="INSERT INTO tb_asistencia VALUES(NULL, $alumno_id,'$fecha','$asistencia','$observacion')";
+    $sql="INSERT INTO tb_asistencia VALUES(NULL,'$alumno_id','$fecha', '$asistencia','$observacion')";    
     $query= mysqli_query($con,$sql);
 
     if($query){

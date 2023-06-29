@@ -4,9 +4,9 @@
 
     $id = $_POST['id'];
 
-    $id_us = $_POST['id_us'];
+    $alumno_id = $_POST['alumno_id'];
 
-    $sql = "DELETE FROM tb_usuario WHERE us_id='$id_us'";
+    $sql = "DELETE FROM tb_asistencia WHERE alumno_id='$alumno_id'";
     $query = mysqli_query($con, $sql);
 
     if($query){

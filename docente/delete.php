@@ -6,11 +6,11 @@
 
     $do_id = $_POST['do_id'];
 
-    $sql = "DELETE FROM tb_docente WHERE do_id='$do_id'";
+    $sql = "DELETE FROM tb_asistencia WHERE do_id='$do_id'";
     $query = mysqli_query($con, $sql);
 
     if($query){
-        $url = './docentes.php?us_id='. $id;
+        $url = './asistencias.php?us_id='. $id;
         header('Location: ' . $url);
         
     }else {
