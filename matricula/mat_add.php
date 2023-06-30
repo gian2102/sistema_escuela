@@ -1,27 +1,28 @@
 <?php
-function conectar_mat_add(){
-    $host="localhost";
-    $user="root";
-    $pass="";
+    function conectar_mat_add(){
+        $host="localhost";
+        $user="root";
+        $pass="";
 
-    $db="db_sistema";
-    $con=mysqli_connect($host,$user,$pass);
+        $db="db_sistema";
+        $con=mysqli_connect($host,$user,$pass);
 
-    mysqli_select_db($con,$db);
-    return $con;
-}
-$con = conectar_mat_add();
+        mysqli_select_db($con,$db);
+        return $con;
+    }
+    $con = conectar_mat_add();
 
-$us_id = $_GET['us_id'];
+    $us_id = $_GET['us_id'];
 
-$sql = "SELECT * FROM tb_usuario WHERE us_id='$us_id'";
-$query = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM tb_usuario WHERE us_id='$us_id'";
+    $query = mysqli_query($con, $sql);
 
-$row = mysqli_fetch_array($query);
+    $row = mysqli_fetch_array($query);
 
-$sql_tb = "select * from tb_matricula";
-$query_tb = mysqli_query($con, $sql_tb);
+    $sql_tb = "select * from tb_matricula";
+    $query_tb = mysqli_query($con, $sql_tb);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

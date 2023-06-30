@@ -22,8 +22,6 @@ $row = mysqli_fetch_array($query);
 $sql_tb = "select * from tb_asistencia";
 $query_tb = mysqli_query($con, $sql_tb);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +45,15 @@ $query_tb = mysqli_query($con, $sql_tb);
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
 
                 <input type="text" name="Alumno_id" placeholder="ID Alumno" title="ID Alumno" required>
-                <input type="text" name="Fecha" placeholder="Fecha" title="Fecha" required>
-                <input type="text" name="Asistencia" placeholder="Asistencia" title="Asistencia" required>
+                <input type="text" name="Fecha" placeholder="Fecha" title="Fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
+                
+                <div class="container-labels">
+                    <label for="asistio">Asistió:</label>
+                    <input type="radio" name="Asistencia" id="asistio" value="Asistio" required>
+                    <label for="no_asistio">No asistió:</label>
+                    <input type="radio" name="Asistencia" id="no_asistio" value="No asistio">
+                </div>
+
                 <input type="text" name="Observacion" placeholder="Observación" title="Observacion" required>
 
                 <button type="submit" value="Registrar">Registrar</button>

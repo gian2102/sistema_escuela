@@ -60,6 +60,7 @@ $query_tb = mysqli_query($con, $sql_tb);
                     while ($row_tb = mysqli_fetch_array($query_tb)) {
                         ?>
                         <tr>
+                                
                             <th>
                                 <?php echo $row_tb['do_nombre'] ?>
                             </th>
@@ -81,6 +82,7 @@ $query_tb = mysqli_query($con, $sql_tb);
                             <th>
                                 <?php echo $row_tb['do_fech_fin_contrat'] ?>
                             </th>
+
                             <th><div class="btn-editar" onclick="window.location.href='./docente_update.php?us_id=<?php echo $row['us_id'] ?>&id_edit=<?php echo $row_tb['do_id'] ?>'">
                             </div>
                             </th>

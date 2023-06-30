@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de asistencia</title>
+</head>
+<body>
+    <h1>Registro de Asistencia</h1>
+
+    <form action="guardar_asistencia.php" method="POST">
+        <label for="alumno_id">Alumno:</label>
+        <select name="alumno_id" id="alumno_id" required>
+            <option value="1">Alumno 1</option>
+            <option value="2">Alumno 2</option>
+            <option value="3">Alumno 3</option>
+            <!-- Agrega más opciones según tus alumnos -->
+        </select>
+
+        <label for="asistencia">Asistencia:</label>
+        <select name="asistencia" id="asistencia" required>
+            <option value="asistio">Asistió</option>
+            <option value="no_asistio">No asistió</option>
+        </select>
+
+        <input type="submit" value="Guardar Asistencia">
+    </form>
+</body>
+</html>

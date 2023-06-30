@@ -323,6 +323,26 @@ table {
     border: none;
     background-color: #f3f3f3;
   }
+
+  .nonStyle {
+    display: block;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+  }
+
+  #feedback-form .container-labels {
+    display: block; 
+    height: 32px;
+    width: 100%;
+    padding: 2px 16px;
+    align-content: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
   
   #feedback-form label {
     color: #777;

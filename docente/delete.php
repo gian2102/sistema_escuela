@@ -10,9 +10,9 @@
     $query = mysqli_query($con, $sql);
 
     if($query){
-        $url = './asistencias.php?us_id='. $id;
+        $url = './docentes.php?us_id='. $id;
         header('Location: ' . $url);
         
-    }else {
+    }else { 
     }
 ?>

@@ -39,49 +39,51 @@ $row = mysqli_fetch_array($query);
         </div>
         <div id="menu-items">
             <div class="item">
-                <a href="../administrativo/administradores.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../administrativo/administradores.php?us_id=">
                     <div class="icon"><img src="../img/administrador.png" alt=""></div>
                     <div class="title"><span>Administradores</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../docente/docentes.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../docente/docentes.php?us_id=1">
                     <div class="icon"><img src="../img/docente.png" alt=""></div>
                     <div class="title"><span>Docentes</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../horario/horarios.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../horario/horarios.php?us_id=1">
                     <div class="icon"><img src="../img/horario.png" alt=""></div>
                     <div class="title"><span>Horarios</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../curso/cursos.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../curso/cursos.php?us_id=1">
                     <div class="icon"><img src="../img/cursos.png" alt=""></div>
                     <div class="title"><span>Cursos</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../salon/salones.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../salon/salones.php?us_id=1">
                     <div class="icon"><img src="../img/salon.png" alt=""></div>
                     <div class="title"><span>Salones</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../estudiante/estudiantes.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../estudiante/estudiantes.php?us_id=1">
                     <div class="icon"><img src="../img/estudiantes.png" alt=""></div>
                     <div class="title"><span>Estudiantes</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../matricula/matriculas.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../matricula/matriculas.php?us_id=1">
+
+                <!-- <a href="../matricula/matriculas.php?us_id=<!--?php echo $row['us_id'] ?>"--> -->
                     <div class="icon"><img src="../img/matricula.png" alt=""></div>
                     <div class="title"><span>Matrícula</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="../asistencia/asistencias.php?us_id=<?php echo $row['us_id'] ?>">
+                <a href="../asistencia/asistencias.php?us_id=1">
                     <div class="icon"><img src="../img/matricula.png" alt=""></div>
                     <div class="title"><span>Asistencia</span></div>
                 </a>
