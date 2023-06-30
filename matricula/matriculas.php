@@ -55,29 +55,31 @@ $query_tb = mysqli_query($con, $sql_tb);
 
                 <tbody>
                     <?php
-                    while ($row_tb = mysqli_fetch_array($query_tb)) {
+                    while ($row_tb = mysqli_fetch_assoc($query_tb)) {
                         ?>
                         <tr>
-                            <th>
-                                <?php echo $row_tb['est_nombres'] ?>
-                            </th>
-                            <th>
-                                <?php echo $row_tb['est_apellidos'] ?>
-                            </th>
-                            <th>
-                                <?php echo $row_tb['sal_grado'] ?>
-                            </th>
-                            <th>
-                                <?php echo $row_tb['sal_seccion'] ?>
-                            </th>
-                            <th><div class="btn-editar" onclick="window.location.href='./mat_update.php?us_id=<?php echo $row['us_id'] ?>&id_edit=<?php echo $row_tb['mat_id'] ?>'">
-                            </div>
-                            </th>
-                            <th><div class="btn-eliminar" onclick="window.location.href='./mat_delete.php?us_id=<?php echo $row['us_id'] ?>&id_delete=<?php echo $row_tb['mat_id'] ?>'"></div>
-                            </th>
+                            <td>
+                                <?php echo $row_tb['est_nombres']; ?>
+                            </td>
+                            <td>
+                                <?php echo $row_tb['est_apellidos']; ?>
+                            </td>
+                            <td>
+                                <?php echo $row_tb['sal_grado']; ?>
+                            </td>
+                            <td>
+                                <?php echo $row_tb['sal_seccion']; ?>
+                            </td>
+                            <td>
+                                <div class="btn-editar" onclick="window.location.href='./mat_update.php?us_id=<?php echo $row['us_id']; ?>&id_edit=<?php echo $row_tb['mat_id']; ?>'"></div>
+                            </td>
+                            <td>
+                                <div class="btn-eliminar" onclick="window.location.href='./mat_delete.php?us_id=<?php echo $row['us_id']; ?>&id_delete=<?php echo $row_tb['mat_id']; ?>'"></div>
+                            </td>
                         </tr>
                         <?php
                     }
+                    
                     ?>
                 </tbody>
             </table>

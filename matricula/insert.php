@@ -4,8 +4,8 @@
 
     $id = $_POST['id'];
 
-    $sal_grado = $_POST['sal_grado'];
-    $sal_seccion = $_POST['sal_seccion'];
+    $sal_grado = $_POST['grado'];
+    $sal_seccion = $_POST['seccion'];
     $est_id = $_POST['est_id'];
 
 

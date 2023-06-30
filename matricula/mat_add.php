@@ -19,10 +19,9 @@
 
     $row = mysqli_fetch_array($query);
 
-    $sql_tb = "select * from tb_matricula";
+    $sql_tb = "SELECT mat.mat_id, mat.grado as sal_grado, mat.seccion as sal_seccion, es.est_nombres, es.est_apellidos FROM tb_matricula mat INNER JOIN tb_salon sal ON sal.sal_grado = mat.grado AND sal.sal_seccion = mat.seccion INNER JOIN tb_estudiante es ON es.est_id = mat.est_id GROUP BY es.est_nombres, es.est_apellidos";
     $query_tb = mysqli_query($con, $sql_tb);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,9 +45,10 @@
             <form action="insert.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['us_id'] ?>">
 
-                <input type="text" name="sal_grado" placeholder="Grado" pattern="[1-9]{1}[0-9]{0,1}" required>
-                <input type="text" name="sal_seccion" placeholder="Seccion" pattern="[A-Za-z0-9]{1,}" required>
+                <input type="text" name="grado" placeholder="Grado" pattern="[1-9]{1}[0-9]{0,1}" required>
+                <input type="text" name="seccion" placeholder="Seccion" pattern="[A-Za-z0-9]{1,}" required>
                 <input type="text" name="est_id" placeholder="ID ESTUDIANTE" pattern="[1-9]{1}[0-9]{0,}" required>
+
 
                 <button type="submit" value="Registrar">Registrar</button>
             </form>

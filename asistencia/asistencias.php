@@ -52,7 +52,7 @@ if (isset($_GET['us_id'])) {
             </form>
             <?php if ($us_id && mysqli_num_rows($query_tb) > 0) { ?>
             <table class="custom-table">
-                <thead>
+                <thead> 
                     <tr>
                         <th>ALUMNO ID</th>
                         <th>FECHA</th>
